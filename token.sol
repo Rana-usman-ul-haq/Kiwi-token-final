@@ -468,7 +468,7 @@ contract Kiwi is Context, IERC20, Ownable {
         uint256 developerBuyFee
     ) public onlyOwner {
         uint256 totalBuyFee = marketingBuyFee + charityBuyFee + developerBuyFee;
-        require(totalBuyFee <= 5, "Buy fee must be less than 5%");
+        require(totalBuyFee <= 5, "Buy fee cannot be higher than 5%");
 
         _kiwiMarketingBuyFee = marketingBuyFee;
         _kiwiCharityBuyFee = charityBuyFee;
@@ -484,7 +484,7 @@ contract Kiwi is Context, IERC20, Ownable {
         uint256 totalSellFee = marketingSellFee +
             charitySellFee +
             developerSellFee;
-        require(totalSellFee <= 5, "Sell fee must be less than 5%");
+        require(totalSellFee <= 5, "Sell fee cannot be higher than 5%");
 
         _kiwiMarketingSellFee = marketingSellFee;
         _kiwiCharitySellFee = charitySellFee;
